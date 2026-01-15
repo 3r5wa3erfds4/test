@@ -64,8 +64,6 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "Version 1.0"
-
 local debugV = false
 
 local Starlight = {
