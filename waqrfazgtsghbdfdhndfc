@@ -2848,7 +2848,7 @@ function Starlight:CreateWindow(WindowSettings)
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
 					or "HookSync"
-				versionLabel.Text = title.Text == "HookSync"
+				versionLabel.Text = tostring(title.Text == "HookSync")
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
