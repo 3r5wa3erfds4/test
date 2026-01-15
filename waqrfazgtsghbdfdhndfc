@@ -68,7 +68,7 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "Prerelease Beta 5.03Meow"
+local Release = "HookSync Version 5.1"
 local debugV = false
 
 local Starlight = {
@@ -2683,17 +2683,17 @@ function Starlight:CreateWindow(WindowSettings)
 		)
 
 		mainWindow.ModalOverlay.Visible = false
-		mainWindow["Loading Screen"].Version.Text = "HookSync Version 5.1"
-		mainWindow["Loading Screen"].Frame.SubFrame.Title.Text = WindowSettings.LoadingSettings.Title or ""
-		mainWindow["Loading Screen"].Frame.SubFrame.Subtitle.Text = WindowSettings.LoadingSettings.Subtitle or ""]]
-		if WindowSettings.LoadingSettings then
-			if WindowSettings.LoadingSettings.Logo then
-				mainWindow["New Loading Screen"].Frame.ImageLabel.Image.Image = "rbxassetid://"
-					.. WindowSettings.LoadingSettings.Logo
-				mainWindow["New Loading Screen"].Frame.ImageLabel.Image.Size = UDim2.fromScale(1, 1)
-				loadingScreenLogoChanged = true
-			end
-		end
+        mainWindow["Loading Screen"].Version.Text = "HookSync Version 5.1"
+        mainWindow["Loading Screen"].Frame.SubFrame.Title.Text = "HookSync"  -- Changed to "HookSync"
+        mainWindow["Loading Screen"].Frame.SubFrame.Subtitle.Text = WindowSettings.LoadingSettings.Subtitle or ""
+        if WindowSettings.LoadingSettings then
+        if WindowSettings.LoadingSettings.Logo then
+        mainWindow["New Loading Screen"].Frame.ImageLabel.Image.Image = "rbxassetid://"
+            .. WindowSettings.LoadingSettings.Logo
+        mainWindow["New Loading Screen"].Frame.ImageLabel.Image.Size = UDim2.fromScale(1, 1)
+        loadingScreenLogoChanged = true
+    end
+end
 
 		mainWindow.Sidebar.Player.PlayerIcon.Image =
 			Players:GetUserThumbnailAsync(Player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48x48)
@@ -2847,8 +2847,8 @@ function Starlight:CreateWindow(WindowSettings)
 				title.TextTransparency = 1
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
-                or "Starlight Interface Suite"
-                versionLabel.Text = "HookSync Version 5.1"  -- Direct assignment, always shows this text
+                or Release  -- Changed to use Release variable instead of hardcoded string
+                versionLabel.Text = Release  -- Direct assignment using the Release variable
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
