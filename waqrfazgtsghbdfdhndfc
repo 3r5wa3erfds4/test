@@ -68,7 +68,6 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "Prerelease Beta 5.03Meow"
 local debugV = false
 
 local Starlight = {
@@ -1554,14 +1553,14 @@ local function Hide(Interface, JustHide: boolean?, Notify: boolean?, Bind: strin
 	if Notify then
 		if Starlight.Instance.MobileToggle.Visible then
 			Starlight:Notification({
-				Title = "Interface Hidden",
+				Title = "UI Hidden",
 				Icon = 87575513726659,
 				Content = "The Interface Has Been Hidden. You May Reopen It By Pressing The Small Icon Button. ",
 				Duration = 2,
 			})
 		else
 			Starlight:Notification({
-				Title = "Interface Hidden",
+				Title = "UI Hidden",
 				Icon = 87575513726659,
 				Content = "The Interface Has Been Hidden. You May Reopen It By Pressing The " .. Bind .. " Key.  ",
 				Duration = 2,
@@ -2848,7 +2847,6 @@ function Starlight:CreateWindow(WindowSettings)
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
 					or "Starlight Interface Suite"
-				versionLabel.Text = title.Text == "Starlight Interface Suite" and Release or `Starlight UI {Release}`
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
