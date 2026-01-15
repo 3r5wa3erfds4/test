@@ -2683,11 +2683,11 @@ function Starlight:CreateWindow(WindowSettings)
 		)
 
 		mainWindow.ModalOverlay.Visible = false
-        mainWindow["Loading Screen"].Version.Text = "HookSync Version 5.1"
-        mainWindow["Loading Screen"].Frame.SubFrame.Title.Text = "HookSync"  -- Changed to "HookSync"
-        mainWindow["Loading Screen"].Frame.SubFrame.Subtitle.Text = WindowSettings.LoadingSettings.Subtitle or ""
-        if WindowSettings.LoadingSettings then
-        if WindowSettings.LoadingSettings.Logo then
+mainWindow["New Loading Screen"].Version.Text = "HookSync Version 5.1"
+mainWindow["New Loading Screen"].Frame.SubFrame.Title.Text = "HookSync"  -- Changed to "HookSync"
+mainWindow["New Loading Screen"].Frame.SubFrame.Subtitle.Text = WindowSettings.LoadingSettings.Subtitle or ""
+if WindowSettings.LoadingSettings then
+    if WindowSettings.LoadingSettings.Logo then
         mainWindow["New Loading Screen"].Frame.ImageLabel.Image.Image = "rbxassetid://"
             .. WindowSettings.LoadingSettings.Logo
         mainWindow["New Loading Screen"].Frame.ImageLabel.Image.Size = UDim2.fromScale(1, 1)
