@@ -2683,8 +2683,8 @@ function Starlight:CreateWindow(WindowSettings)
 		)
 
 		mainWindow.ModalOverlay.Visible = false
-		--[[mainWindow["Loading Screen"].Version.Text = WindowSettings.LoadingSettings.Title == Release
-		mainWindow["Loading Screen"].Frame.SubFrame.Title.Text = WindowSettings.LoadingSettings.Title or ""
+		--[[mainWindow["Loading Screen"].Version.Text = WindowSettings.LoadingSettings.Title == "HookSync Version 5.1"
+		mainWindow["Loading Screen"].Frame.SubFrame.Title.Text = WindowSettings.LoadingSettings.Title or HookSync Version 5.1
 		mainWindow["Loading Screen"].Frame.SubFrame.Subtitle.Text = WindowSettings.LoadingSettings.Subtitle or ""]]
 		if WindowSettings.LoadingSettings then
 			if WindowSettings.LoadingSettings.Logo then
