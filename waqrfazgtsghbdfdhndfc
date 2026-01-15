@@ -68,7 +68,7 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "Prerelease Beta 5.03Meow"
+local Release = "HookSync 5.0"
 local debugV = false
 
 local Starlight = {
@@ -88,8 +88,8 @@ local Starlight = {
 	OnDestroy = nil,
 
 	FileSystem = {
-		Folder = "Starlight Interface Suite",
-		FileExtension = ".starlight",
+		Folder = "HookSync Interface Suite",
+		FileExtension = ".hooksync",
 
 		AutoloadConfigPath = nil,
 		AutoloadThemePath = nil,
@@ -2216,12 +2216,12 @@ function Starlight:Notification(data)
 
 	--[[if not correctBuild and not warned then
 		warned = true
-		warn('Starlight | Build Mismatch')
-		warn('Starlight may run into issues as it seems you are running an incompatible interface version ('.. (StarlightUI.Resources:FindFirstChild("Build") and StarlightUI.Resources:FindFirstChild("Build").Value or 'No Build') ..'). of Starlight\n\nThis version of Starlight is intended for interface build '..Starlight.InterfaceBuild..'.\nTry rerunning the script. If the issue persists, join our discord for support.')
+		warn('HookSync | Build Mismatch')
+		warn('HookSync may run into issues as it seems you are running an incompatible interface version ('.. (StarlightUI.Resources:FindFirstChild("Build") and StarlightUI.Resources:FindFirstChild("Build").Value or 'No Build') ..'). of Starlight\n\nThis version of Starlight is intended for interface build '..Starlight.InterfaceBuild..'.\nTry rerunning the script. If the issue persists, join our discord for support.')
 		pcall(function()
 			Starlight:Notification({
-				Title = "Starlight - Build Mistmatch",
-				Content = 'Starlight may run into issues as it seems you are running an incompatible interface version ('.. (StarlightUI.Resources:FindFirstChild("Build") and StarlightUI.Resources:FindFirstChild("Build").Value or 'No Build') ..'). of Starlight\n\nThis version of Starlight is intended for interface build '..Starlight.InterfaceBuild..'. \nTry rerunning the script. If the issue persists, join our discord for support.',
+				Title = "HookSync - Build Mistmatch",
+				Content = 'HookSync may run into issues as it seems you are running an incompatible interface version ('.. (StarlightUI.Resources:FindFirstChild("Build") and StarlightUI.Resources:FindFirstChild("Build").Value or 'No Build') ..'). of Starlight\n\nThis version of Starlight is intended for interface build '..Starlight.InterfaceBuild..'. \nTry rerunning the script. If the issue persists, join our discord for support.',
 				Icon = 129398364168201
 			})
 		end)
@@ -2683,7 +2683,7 @@ function Starlight:CreateWindow(WindowSettings)
 		)
 
 		mainWindow.ModalOverlay.Visible = false
-		--[[mainWindow["Loading Screen"].Version.Text = WindowSettings.LoadingSettings.Title == "Starlight Interface Suite" and Release or "Starlight Interface Suite " .. Release
+		--[[mainWindow["Loading Screen"].Version.Text = WindowSettings.LoadingSettings.Title == Release
 		mainWindow["Loading Screen"].Frame.SubFrame.Title.Text = WindowSettings.LoadingSettings.Title or ""
 		mainWindow["Loading Screen"].Frame.SubFrame.Subtitle.Text = WindowSettings.LoadingSettings.Subtitle or ""]]
 		if WindowSettings.LoadingSettings then
@@ -2847,8 +2847,8 @@ function Starlight:CreateWindow(WindowSettings)
 				title.TextTransparency = 1
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
-					or "Starlight Interface Suite"
-				versionLabel.Text = title.Text == "Starlight Interface Suite" and Release or `Starlight UI {Release}`
+					or "HookSync"
+				versionLabel.Text = title.Text == Release
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
@@ -2896,7 +2896,7 @@ function Starlight:CreateWindow(WindowSettings)
 
 				subtitle.Text = WindowSettings.LoadingSettings
 					and (WindowSettings.LoadingSettings.Subtitle or WindowSettings.LoadingSettings.Title)
-					or "Welcome To Starlight!"
+					or "Welcome To HookSync!"
 				Tween(title, { TextTransparency = 1 }, nil, Tween.Info("Quint", "InOut", 0.2))
 				Tween(title.playerName, { Position = UDim2.new(0, -8, 0, 0) }, nil, Tween.Info("Quint", "InOut", 0.85))
 				Tween(
